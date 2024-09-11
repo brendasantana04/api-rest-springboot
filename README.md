@@ -7,10 +7,6 @@ classDiagram
         +String nome
         +String tipo
         +Double tamanho
-        +Double distanciaDoSol
-        +Boolean possuiVida
-        +LocalDate descobertoEm
-        +String descobertoPor
         +Galaxia galaxia
     }
 
@@ -20,7 +16,6 @@ classDiagram
         +String tipo
         +Double tamanho
         +Double temperaturaSuperficial
-        +Double distanciaDaTerra
         +Galaxia galaxia
     }
 
@@ -28,14 +23,13 @@ classDiagram
         +Long id
         +String nome
         +String tipo
-        +Long numeroDeEstrelas
+        +Double tamanho
         +Double distanciaDaTerra
     }
 
     class Constelacao {
         +Long id
         +String nome
-        +String hemisferio
     }
 
     Planeta "1" -- "0..1" Galaxia : pertence a
