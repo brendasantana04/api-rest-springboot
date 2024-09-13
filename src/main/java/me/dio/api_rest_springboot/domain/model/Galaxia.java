@@ -1,4 +1,4 @@
-package me.dio.api_rest_springboot.model;
+package me.dio.api_rest_springboot.domain.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
