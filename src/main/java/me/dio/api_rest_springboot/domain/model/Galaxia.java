@@ -12,7 +12,7 @@ public class Galaxia {
     //atributos
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Double id;
+    private Integer id;
 
     @Column (unique = true)
     private String nome;
@@ -20,10 +20,10 @@ public class Galaxia {
     private Double tamanho;
     private Long distanciaTerra;
     
-    public Double getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Double id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getNome() {

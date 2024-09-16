@@ -12,19 +12,19 @@ public class Estrela {
     //atributos
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Double id;
+    private Integer id;
 
     @Column (unique = true)
     private String nome;
     private String tipo;
-    private Double tamanho;
+    private Double diametro;
     // private Galaxia galaxia;
     private Double distanciaTerra;
     
-    public Double getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Double id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getNome() {
@@ -40,10 +40,10 @@ public class Estrela {
         this.tipo = tipo;
     }
     public Double getTamanho() {
-        return tamanho;
+        return diametro;
     }
     public void setTamanho(Double tamanho) {
-        this.tamanho = tamanho;
+        this.diametro = tamanho;
     }
 
     // public Galaxia getGalaxia() {

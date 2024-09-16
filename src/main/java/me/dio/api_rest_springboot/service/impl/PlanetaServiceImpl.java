@@ -26,8 +26,8 @@ public class PlanetaServiceImpl implements PlanetaService{
     @Override
     public Planeta create(Planeta planetaToCreate) {
         //verificacao se ja existe id no banco de dados
-        if (planetaToCreate.getId() != null && PlanetaRepository.existsById(planetaToCreate.getId())){
-            throw new  IllegalArgumentException("Esse ID de planeta já existe");
+        if (planetaToCreate.getId() != null && planetaRepository.existsById(planetaToCreate.getId())){
+            throw new IllegalArgumentException("Esse ID de planeta já existe");
         }
         return planetaRepository.save(planetaToCreate);
     }

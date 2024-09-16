@@ -11,31 +11,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import me.dio.api_rest_springboot.domain.model.Planeta;
-import me.dio.api_rest_springboot.service.PlanetaService;
+import me.dio.api_rest_springboot.domain.model.Estrela;
+import me.dio.api_rest_springboot.service.EstrelaService;
 
 @RestController
-@RequestMapping("/plnt") //endpoint do planeta
-public class PlanetaController {
+@RequestMapping("/star") //endpoint de estrela
+public class EstrelaController {
 
-    private final PlanetaService planetaService;
+    private final EstrelaService estrelaService;
 
-    public PlanetaController(PlanetaService planetaService){
-        this.planetaService = planetaService;
+    public EstrelaController(EstrelaService estrelaService) {
+        this.estrelaService = estrelaService;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Planeta> findById(@PathVariable Integer id) {
-        return ResponseEntity.ok(planetaService.findById(id));
+    public ResponseEntity<Estrela> findById(@PathVariable Integer id){
+        return ResponseEntity.ok(estrelaService.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Planeta> create(@RequestBody Planeta planetaToCreate) {
-        var planetaCreated = planetaService.create(planetaToCreate);
+    public ResponseEntity<Estrela> create (@RequestBody Estrela estrelaToCreate){
+        var estrelaCreated = estrelaService.create(estrelaToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
             .path("{id}")
-            .buildAndExpand(planetaCreated.getId())
+            .buildAndExpand(estrelaCreated.getId())
             .toUri();
-        return ResponseEntity.created(location).body(planetaCreated);
+        return ResponseEntity.created(location).body(estrelaCreated);
     }
 }
